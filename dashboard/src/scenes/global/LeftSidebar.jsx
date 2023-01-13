@@ -42,23 +42,24 @@ const LeftSidebar = () => {
 
   return (
     <Box
-      sx={{
-        "& .pro-sidebar-inner": {
-          background: `#00003b !important`,
-        },
-        "& .pro-icon-wrapper": {
-          backgroundColor: "transparent !important",
-        },
-        "& .pro-inner-item": {
-          padding: "5px 35px 5px 20px !important",
-        },
-        "& .pro-inner-item:hover": {
-          color: "#868dfb !important",
-        },
-        "& .pro-menu-item.active": {
-          color: "#6870fa !important",
-        },
-      }}
+    sx={{
+      "& .pro-sidebar-inner": {
+        background: `#000036 !important`,
+      },
+      "& .pro-icon-wrapper": {
+        backgroundColor: "transparent !important",
+      },
+      "& .pro-inner-item": {
+        padding: "5px 35px 5px 20px !important",
+      },
+      "& .pro-inner-item:hover": {
+        color: "#868dfb !important",
+      },
+      "& .pro-menu-item.active": {
+        color: "#6870fa !important",
+      },
+    }}
+      
     >
       <ProSidebar collapsed={isCollapsed}>
         <Menu iconShape="square">
@@ -67,7 +68,7 @@ const LeftSidebar = () => {
             onClick={() => setIsCollapsed(!isCollapsed)}
             icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
             style={{
-              margin: "10px 0 20px 0",
+            
               color: 'grey',
             }}
           >
@@ -75,9 +76,8 @@ const LeftSidebar = () => {
               <Box
                 display="flex"
                 justifyContent="flex-end"
-                ml="15px"
-              >
               
+              >              
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
                 </IconButton>
@@ -86,12 +86,12 @@ const LeftSidebar = () => {
           </MenuItem>
 
           {!isCollapsed && (
-            <Box mb="25px">
+            <Box >
              <Typography
                   variant="h6"
                   color='gery'
                   fontWeight="bold"
-                  sx={{ m: "10px 0 0 0" }}
+                  
                 >
                   MENU
                 </Typography>
@@ -102,7 +102,7 @@ const LeftSidebar = () => {
             
             <Item
               title="Dashboard"
-              to="/"
+              to="/dash"
               icon={<GridViewOutlined />}
               selected={selected}
               setSelected={setSelected}         
@@ -133,7 +133,7 @@ const LeftSidebar = () => {
             <Typography
               variant="h6"
               color='grey'
-              sx={{ m: "15px 0 5px 20px" }}
+            
             >
               Applications
             </Typography>
@@ -198,7 +198,7 @@ const LeftSidebar = () => {
             <Typography
               variant="h6"
               color='grey'
-              sx={{ m: "15px 0 5px 20px" }}
+              
             >
               Layouts
             </Typography>
@@ -206,7 +206,7 @@ const LeftSidebar = () => {
             <Typography
               variant="h6"
               color='grey'
-              sx={{ m: "15px 0 5px 20px" }}
+      
             >
               Pages
             </Typography>
@@ -228,7 +228,7 @@ const LeftSidebar = () => {
             <Typography
               variant="h6"
               color='grey'
-              sx={{ m: "15px 0 5px 20px" }}
+            
             >
               Components
             </Typography>

@@ -8,22 +8,29 @@ import LineChart from "../../components/LineChart";
 import BarChart from "../../components/BarChart";
 import StatBox from "../../components/StatBox";
 import PieChart from "../../components/PieChart";
-import MediaQuery from '@mui/material/useMediaQuery'
+import { MenuItem } from "react-pro-sidebar";
+import "react-pro-sidebar/dist/css/styles.css";
+import MenuOutlinedIcon from "@mui/icons-material/MoreHoriz"
+import InfoOutlined from "@mui/icons-material/InfoOutlined";
+
+import Circle from "../../components/Circle";
+
 
 
 const Dashboard = () => {
-  const UseMediaQuery  = MediaQuery('(min-width:600px)')
 
   return (
 
-    <Box m="10px" >
+    <Box m="10px" 
+     width='100%'
+     height='100px' >
       
 
       {/* GRID & CHARTS */}
       <Box
         sx={{
           display:"grid",
-        gridTemplateColumns:"repeat(9, 1fr)",
+        gridTemplateColumns:"repeat(12, 1fr)",
         gridAutoRows:"160px",
         gap:"10px"
         }}
@@ -75,7 +82,7 @@ const Dashboard = () => {
           />
         </Box>
         <Box
-      sx={{
+         sx={{
         gridColumn:"span 3",
         backgroundColor:'white',
         display:"flex",
@@ -97,6 +104,154 @@ const Dashboard = () => {
           />
           
         </Box>
+        <Box
+      sx={{
+        gridRow:"span 5",
+        gridColumn:"span 3",
+        backgroundColor:'white',
+        display:"flex",
+        alignItems:"center",
+        justifyContent:"center"
+      }}
+        >
+            <Box
+      sx={{
+        "& .pro-sidebar-inner": {
+          background: `white !important`,
+        },
+        "& .pro-icon-wrapper": {
+          backgroundColor: "transparent !important",
+        },
+        "& .pro-inner-item": {
+          padding: "5px 35px 5px 20px !important",
+        },
+        "& .pro-inner-item:hover": {
+          color: "#868dfb !important",
+        },
+        "& .pro-menu-item.active": {
+          color: "#6870fa !important",
+        },
+      }}
+    >
+          <Box display='flex' justifyContent='flex-end' >
+            <MenuItem
+              icon={<MenuOutlinedIcon />}
+              style={{               
+                color: 'grey',
+              }}
+            >
+
+            </MenuItem>
+          </Box>
+
+          <Box mb="50px">
+            <Box display="flex" justifyContent="center" alignItems="center">
+              <img
+                alt="profile-user"
+                width="100px"
+                height="100px"
+                src={`../../assets/userprofile.png`}
+                style={{ cursor: "pointer", borderRadius: "50%" }}
+              />
+            </Box>
+            <Box textAlign="center">
+              <Typography
+                variant="h4"
+                color='black'
+                fontWeight="600"
+                sx={{ m: "10px 0 0 0" }}
+              >
+                Jennifier Bennett
+                <Typography>Product Designer</Typography>
+              </Typography>
+            </Box>
+            <Box display="flex" justifyContent="space-evenly" borderBottom={`1px solid black`}>
+
+              <Typography
+                variant="h6"
+                fontWeight="600"
+                color='black'
+              >
+                1,269
+                <Typography>Products</Typography>
+
+              </Typography>
+              <Typography
+                variant="h6"
+                fontWeight="600"
+                color='black'
+              >
+                5.2k
+                <Typography>Followers</Typography>
+
+              </Typography>
+
+
+            </Box>
+          </Box>
+
+
+          <Box display="flex" justifyContent="space-around"  >
+            <Typography
+              variant="h6"
+              fontWeight="600"
+              color='black'
+            >
+              Earning
+            </Typography>
+            <IconButton >
+              <InfoOutlined
+                sx={{ color: 'black', fontSize: "16px" }} />
+            </IconButton>
+          </Box>
+          <Box textAlign='center'  >
+            <Circle/>
+            <Typography color='black' variant="h5" fontWeight="600">
+              $26,256
+              <Typography color='black' variant="h6" fontWeight="400">
+                Earning this Month
+              </Typography>
+            </Typography>
+          </Box>
+          <Box display='flex' flexDirection='row' justifyContent='space-around'
+            borderBottom={`1px solid black`}>
+            <StatBox increase='+2.65%' />
+            <Typography color='black' variant="h6" fontWeight="200"  >
+              FromPreviousPeriod
+            </Typography>
+          </Box>
+          <Box paddingTop='20px'>
+            <Typography
+              variant="h6"
+              fontWeight="600"
+              color='black'
+              p='15px'
+            >
+              Recent Activity
+            </Typography>
+          </Box>
+
+          <Box display="flex" flex-direction=" row" paddingBottom='20px' paddingTop='20px' >
+            <Button>12 sep</Button>
+            <Typography variant="h6" fontWeight="400" color='black' >
+              Responded to need "Volunteer Activities"
+            </Typography>
+          </Box>
+          <Box display="flex" flex-direction=" row" paddingBottom='20px' >
+            <Button>11 sep</Button>
+            <Typography variant="h6" fontWeight="400" color='black' >
+              Everyone realizes would be desirable...
+            </Typography>
+          </Box>
+          <Box display="flex" flex-direction=" row" paddingBottom='20px'>
+            <Button>10 sep</Button>
+            <Typography variant="h6" fontWeight="400" color='black'>
+              Joined the group "Boardsmanship Forum"
+            </Typography>
+          </Box>
+
+    </Box>
+          </Box>
         
       
 
@@ -114,12 +269,13 @@ const Dashboard = () => {
                 variant="h4"
                 fontWeight="400"
                 color='black'
+                p='15px'
               >
                 Overview
               </Typography>
               <Box 
               sx={{
-                display:'flex', flexDirection:'row', paddingTop:'20px', fontWeight:'bold'
+                display:'flex', flexDirection:'row', paddingTop:'20px', fontWeight:'bold' ,p:'15px'
               }}>
               <Typography variant="h6"fontWeight="400" color='black'>
                 ThisMonth
