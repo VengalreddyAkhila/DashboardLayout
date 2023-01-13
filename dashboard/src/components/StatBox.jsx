@@ -1,4 +1,4 @@
-import { Box, Typography} from "@mui/material";
+import { Box, Button, Typography} from "@mui/material";
 
 
 const StatBox = ({ title, subtitle, icon, progress, increase,decrease }) => {
@@ -28,14 +28,18 @@ const StatBox = ({ title, subtitle, icon, progress, increase,decrease }) => {
           fontStyle="italic"
           sx={{ color: 'green' }}
         >
+          <Button sx={{ color: 'green' }}>
           {increase}
+          </Button>
         </Typography>
         <Typography
           variant="h5"
           fontStyle="italic"
           sx={{ color: 'red' }}
         >
+         <Button sx={{ color: 'red' }}>
           {decrease}
+          </Button>
         </Typography>
       </Box>
     </Box>
